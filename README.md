@@ -105,22 +105,6 @@ See the examples/ directory for more detailed examples:
 basic.lingo - Basic types and functions
 nullsafe.lingo - Null safety features
 generics.lingo - Generic-like patterns
-Project Structure
-Code
-lingo/
-├── cmd/
-│   ├── lingo/          # Main compiler CLI
-│   └── lingoctl/       # Developer tools CLI
-├── pkg/
-│   ├── lexer/          # Tokenization
-│   ├── parser/         # AST generation
-│   ├── typechecker/    # Static type checking
-│   ├── codegen/        # Go code generation
-│   └── runtime/        # Runtime helpers
-├── examples/           # Example Lingo files
-├── tests/              # Integration tests
-├── Makefile            # Build automation
-└── go.mod              # Go module definition
 
 # How It Works
 
