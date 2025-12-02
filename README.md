@@ -27,7 +27,7 @@ Binaries will be created in ./bin/
 
 # Quick Start
 
-Create a Lingo file (. lingo)
+Create a Lingo file (.lingo)
 ```bash
 package main
 
