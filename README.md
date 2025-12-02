@@ -24,7 +24,7 @@ Binaries will be created in ./bin/
 # Quick Start
 
 Create a Lingo file (. lingo)
-Go
+```bash
 package main
 
 func main() {
@@ -33,6 +33,7 @@ func main() {
     
     fmt. Println("Hello, " + greeting)
 }
+```
 Compile to Go
 ```bash
 ./bin/lingo -file hello.lingo -out hello.go
