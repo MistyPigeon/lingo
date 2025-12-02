@@ -18,10 +18,11 @@ git clone https://github.com/MistyPigeon/lingo.git
 cd lingo
 make deps
 make build
+```
+Binaries will be created in ./bin/
 
-#Binaries will be created in ./bin/
+# Quick Start
 
-Quick Start
 Create a Lingo file (. lingo)
 Go
 package main
