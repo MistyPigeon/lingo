@@ -34,31 +34,34 @@ func main() {
     fmt. Println("Hello, " + greeting)
 }
 Compile to Go
-bash
+```bash
 ./bin/lingo -file hello.lingo -out hello.go
 go run hello.go
+```
 Syntax Guide
 Type Annotations
 Variables require type annotations for static checking:
 
-Go
+```bash
 var x: int = 42
 var name: string = "Alice"
 var items: []string = []string{"a", "b"}
 var config: map[string]int = map[string]int{"count": 5}
 Nullable Types
 Use ? to mark types as nullable:
-
-Go
+```
+```bash
 var email: ? string = null
 var count: ?int = 0
 Null Coalescing
+```
 Use ? : to provide default values for nullable types:
 
-Go
+```bash
 var result: string = email ?: "no-email@example.com"
+```
 Functions with Type Safety
-Go
+```bash
 func add(a: int, b: int) int {
     return a + b
 }
@@ -66,27 +69,32 @@ func add(a: int, b: int) int {
 func greet(name: ? string) string {
     return "Hello, " + (name ?: "Guest")
 }
+```
 Structs
-Go
+```bash
 type User struct {
     id: int
     name: string
     email: ?string
 }
+```
 Methods
-Go
+```bash
 func (u: *User) GetEmail() ? string {
     return u.email
 }
+```
 Generics (Basic)
-Go
+```bash
 func first(items: []interface{}) interface{} {
     return items[0]
 }
+```
 CLI Commands
 Compile Lingo to Go
-bash
+```bash
 ./bin/lingo -file input.lingo -out output.go [-check] [-v]
+```
 Options:
 
 -file: Input . lingo file (required)
@@ -94,11 +102,13 @@ Options:
 -check: Only perform type checking without generating code
 -v: Verbose output (show tokens and AST)
 Lexical Analysis
-bash
+```bash
 ./bin/lingoctl -cmd lex -file input.lingo
+```
 Parse to AST
-bash
+```bash
 ./bin/lingoctl -cmd parse -file input.lingo
+```
 Examples
 See the examples/ directory for more detailed examples:
 
@@ -128,14 +138,15 @@ Pointers: *T
 Slices: []T
 Nullable Types
 Any type can be marked nullable with ?:
-
+```bash
 ? string
 ?int
 ?[]string
 ?*User
+```
 Null Safety
 Nullable Variables
-Go
+```bash
 var user: ? User = nil
 
 // Error at compile time - cannot use potentially nil value
@@ -144,28 +155,33 @@ var user: ? User = nil
 // Correct - using null coalescing
 name := user ?: defaultUser
 Null Checks
-Go
+
 if user != null {
     // user is guaranteed non-nil here
     name := user.name
 }
+```
 Null Coalescing Operator
-Go
+```bash
 var email: string = userEmail ?: "noemail@example.com"
+```
 Development
 Build
 bash
 make build
 Run Tests
-bash
+```bash
 make test
+```
 Format Code
-bash
+```bash
 make fmt
+```
 Run Full Pipeline
-bash
+```bash
 make all
-Contributing
+```
+# Contributing
 Contributions are welcome! Please:
 
 Fork the repository
