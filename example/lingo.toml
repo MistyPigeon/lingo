@@ -1,0 +1,51 @@
+# lingo.toml — configuration for Lingo projects
+
+[project]
+name = "my-lingo-project"           # optional project name
+version = "0.1.0"                   # optional project version (semantic versioning)
+description = "A Lingo-based Go project"  # optional description
+
+# Where to write generated Go code
+[output]
+dir = "gen"                         # relative path to output generated Go files
+package = ""                       # optional Go package name prefix (overrides default)
+
+# Lingo language features / toggles
+[features]
+null_safety = true                 # enable/disable null-safety checks
+union_types = true                 # enable union / sum types
+strict_type_checks = true          # whether to enforce stricter compile-time type checks
+enable_generics = false            # generics support (if implemented)
+zero_value_checks = false          # insert runtime zero-value / nil-value guards (if needed)
+
+# Build settings for generated Go code
+[go_build]
+module = ""                        # Go module name (e.g. github.com/username/project)
+go_version = "1.22"                # target Go version; helps ensure compat in codegen
+format = true                      # whether to run gofmt / goimports on generated code
+
+# Optional: paths / includes / excludes
+[paths]
+include = ["src", "lib"]           # directories (relative) with Lingo source files
+exclude = ["vendor", "testdata"]   # directories to skip / ignore
+
+# Optional: custom package / module mappings
+[mapping]
+# Example: map `@utils/*` in Lingo to `github.com/my/project/utils/*` in generated Go  
+"@utils/*" = "github.com/my/project/utils/*"
+
+# Optional: lint / CI settings for generated code
+[lint]
+enable = true                      # whether to run linter (golangci-lint, etc.) after generation
+reports_dir = "gen/lint_reports"   # where to dump lint / static-analysis reports
+
+# Optional: debug / source-map settings
+[debug]
+emit_comments = true               # whether to keep comments from Lingo source in generated Go
+keep_source_map = false            # whether to output mapping between Lingo ↔ generated Go (for debugging)
+
+# Optional: tests / examples generation
+[tests]
+generate = false                   # generate Go test files for Lingo code
+tests_dir = "gen/tests"            # where to put generated tests
+
