@@ -1,6 +1,6 @@
 # Lingo - TypeScript-like Meta-Language for Go
 
-Lingo is a meta-language compiler that brings TypeScript-like static typing and null-safety features to Go, while maintaining Go's familiar syntax and idioms.
+Lingo is a meta-language compiler that brings TypeScript-like static typing and null-safety features to Go, while maintaining Go's familiar syntax and idioms. [Dingo]:  https://github.com/MadAppGang/dingo
 
 ## Features
 
